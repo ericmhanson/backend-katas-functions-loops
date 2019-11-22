@@ -49,12 +49,22 @@ def factorial(x):
 
 def fibonacci(n):
     """Compute the nth term of fibonacci sequence"""
-    fibonacci = 1
-    for i in range(n + 1):
-        fibonacci = add(fibonacci, i)
-    return fibonacci
+    num1 = 0
+    num2 = 1
+    for i in range(n - 1):
+        if i % 2 == 0:
+            num1 += num2
+        else:
+            num2 += num1
+    if n % 2 == 0:
+        return num2
+    else:
+        return num1
 
 
 if __name__ == '__main__':
-    # your code to call functions above
-    pass
+    print(add(2, 4))
+    print(multiply(6, -8))
+    print(power(2, 8))
+    print(factorial(4))
+    print(fibonacci(8))
